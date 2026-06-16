@@ -121,7 +121,7 @@ export default function Home() {
                 className="flex items-center gap-4 mt-10"
               >
                 <a
-                  href="#solutions"
+                  href="/solutions"
                   className="px-7 py-3 rounded-full border border-[#FF1E1E]/40 bg-[#FF1E1E]/10 text-white font-mono text-xs tracking-widest uppercase hover:bg-[#FF1E1E]/20 hover:border-[#FF1E1E]/70 hover:shadow-[0_0_20px_rgba(255,30,30,0.3)] transition-all duration-300"
                 >
                   View Solutions
