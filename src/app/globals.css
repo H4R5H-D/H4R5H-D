@@ -1,15 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-saffron: #FF4500;
+  /* Brand palette */
+  --color-saffron:  #FF4500;
+  --color-ember:    #FF6B35;   /* secondary warm accent */
+  --color-crimson:  #FF1E1E;   /* primary red */
   --color-surgical: #FFFFFF;
-  --color-pure: #000000;
+  --color-pure:     #000000;
+  --color-void:     #020202;
+
+  /* Typography */
+  --font-mono-brand: 'Space Mono', ui-monospace, monospace;
+  --font-sans-brand: 'Inter', ui-sans-serif, system-ui, sans-serif;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+  .text-balance { text-wrap: balance; }
 }
 
 html, body {
@@ -18,7 +25,13 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  font-family: var(--font-sans-brand);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+/* Override Tailwind mono to use Space Mono */
+.font-mono { font-family: var(--font-mono-brand) !important; }
 
 /* Glassmorphism */
 .glass {
@@ -39,9 +52,9 @@ html, body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: #050505; }
-::-webkit-scrollbar-thumb { background: #222222; border-radius: 4px; }
+::-webkit-scrollbar-thumb { background: #1a1a1a; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #FF1E1E; }
 
 /* ── Animations ─────────────────────────────────────────── */
@@ -56,9 +69,14 @@ html, body {
   100% { transform: translateY(4px); }
 }
 
-@keyframes hud-pulse {
-  0%, 100% { opacity: 0.4; }
-  50%       { opacity: 0.9; }
+@keyframes ember-float {
+  0%, 100% { transform: translateY(0px)    scale(1);    opacity: 0.6; }
+  50%       { transform: translateY(-10px) scale(1.05); opacity: 1; }
+}
+
+@keyframes badge-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(255,30,30,0.3);  }
+  50%       { box-shadow: 0 0 20px rgba(255,30,30,0.6); }
 }
 
 @keyframes glitch-1 {
@@ -74,6 +92,11 @@ html, body {
   25%       { clip-path: inset(60% 0 30% 0); transform: translate(-2px, 0); }
   50%       { clip-path: inset(30% 0 50% 0); transform: translate( 0px, 0); }
   75%       { clip-path: inset(80% 0  5% 0); transform: translate( 2px, 0); }
+}
+
+@keyframes card-scan {
+  0%   { top: -100%; }
+  100% { top: 200%; }
 }
 
 /* ── Scanlines ──────────────────────────────────────────── */
@@ -103,7 +126,7 @@ html, body {
 .hud-bracket-bl { border-width: 0 0 1px 1px; }
 .hud-bracket-br { border-width: 0 1px 1px 0; }
 
-/* ── Neon glow ──────────────────────────────────────────── */
+/* ── Neon glows ─────────────────────────────────────────── */
 
 .neon-red {
   text-shadow:
@@ -112,7 +135,13 @@ html, body {
     0 0 30px rgba(255, 30, 30, 0.3);
 }
 
-/* ── Glitch wrapper (apply to a container div) ──────────── */
+.neon-ember {
+  text-shadow:
+    0 0  6px rgba(255, 107, 53, 0.9),
+    0 0 14px rgba(255, 107, 53, 0.5);
+}
+
+/* ── Glitch wrapper ─────────────────────────────────────── */
 
 .glitch-wrapper {
   position: relative;
@@ -131,21 +160,16 @@ html, body {
 .glitch-wrapper::before {
   color: #FF1E1E;
   animation: glitch-1 3.5s infinite steps(1);
-  opacity: 0.35;
+  opacity: 0.3;
 }
 
 .glitch-wrapper::after {
-  color: #ffffff;
+  color: #fff;
   animation: glitch-2 4s infinite steps(1) 0.5s;
-  opacity: 0.2;
+  opacity: 0.15;
 }
 
-/* ── Card scan line (hover effect for bento cards) ─────── */
-
-@keyframes card-scan {
-  0%   { top: -100%; }
-  100% { top: 200%; }
-}
+/* ── Card scan line ─────────────────────────────────────── */
 
 .card-scan-line {
   position: absolute;
@@ -161,4 +185,18 @@ html, body {
   pointer-events: none;
   animation: card-scan 3.5s linear infinite;
   z-index: 5;
+}
+
+/* ── Brand badge ────────────────────────────────────────── */
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 14px 4px 10px;
+  border: 1px solid rgba(255, 30, 30, 0.3);
+  border-radius: 999px;
+  background: rgba(255, 30, 30, 0.05);
+  backdrop-filter: blur(10px);
+  animation: badge-glow 3s ease-in-out infinite;
 }
