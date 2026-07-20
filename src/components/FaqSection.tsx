@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "How much does it cost?",
     answer:
-      "We start every engagement with an AI Time Audit: for a small fixed fee we map your workflows and identify at least 4–5 hours per week of automatable work — or you get your money back. After the audit, builds are scoped at a fixed price. No open-ended retainers, no surprise invoices.",
+      "Every engagement starts with an AI Time Audit: we map your workflows and identify at least 4–5 hours per week of automatable work — if we can't, you don't pay. After the audit, every build is scoped at a fixed price agreed upfront. No open-ended retainers, no surprise invoices.",
   },
   {
     question: "Is my business data safe with AI?",

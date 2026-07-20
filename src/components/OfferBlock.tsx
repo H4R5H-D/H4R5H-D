@@ -8,7 +8,7 @@ const BOOKING_URL = "mailto:harsh@vyuhmatrix.com?subject=AI%20Time%20Audit";
 
 const guarantees = [
   { icon: Clock, text: "Results in one week" },
-  { icon: BadgeCheck, text: "4–5 hrs/week found, or your money back" },
+  { icon: BadgeCheck, text: "4–5 hrs/week found, or you don't pay" },
   { icon: ShieldCheck, text: "No commitment beyond the audit" },
 ];
 
@@ -42,8 +42,7 @@ export function OfferBlock() {
                 {"// Start Here"}
               </p>
               <h2 className="font-mono font-black text-3xl md:text-4xl text-white tracking-tight leading-tight mb-4">
-                AI Time Audit —{" "}
-                <span className="text-[#FF1E1E]">$199</span>
+                AI <span className="text-[#FF1E1E]">Time Audit</span>
               </h2>
               <p className="text-gray-400 leading-relaxed max-w-md">
                 In one week, we map your team&apos;s workflows and show you exactly
@@ -73,7 +72,7 @@ export function OfferBlock() {
                 <ArrowRight className="w-3.5 h-3.5" />
               </a>
               <p className="font-mono text-[10px] text-gray-600 tracking-widest text-center">
-                Fixed price · Money-back guarantee
+                One week · No commitment
               </p>
             </div>
           </div>
