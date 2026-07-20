@@ -33,7 +33,6 @@ export function OfferBlock() {
             WebkitBackdropFilter: "blur(24px)",
           }}
         >
-          <div className="card-scan-line opacity-40" />
 
           <div className="flex flex-col md:flex-row md:items-center gap-10">
             {/* Left: the offer */}

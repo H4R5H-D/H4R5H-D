@@ -74,15 +74,6 @@ export function ContactForm() {
               WebkitBackdropFilter: "blur(24px)",
             }}
           >
-            {/* Card scan line */}
-            <div className="card-scan-line opacity-30 group-hover:opacity-70 transition-opacity duration-500" />
-
-            {/* HUD corners */}
-            <span className="absolute top-3 left-3 w-4 h-4 border-t border-l border-[#FF1E1E]/30 rounded-none" />
-            <span className="absolute top-3 right-3 w-4 h-4 border-t border-r border-[#FF1E1E]/30 rounded-none" />
-            <span className="absolute bottom-3 left-3 w-4 h-4 border-b border-l border-[#FF1E1E]/30 rounded-none" />
-            <span className="absolute bottom-3 right-3 w-4 h-4 border-b border-r border-[#FF1E1E]/30 rounded-none" />
-
             {sent ? (
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
