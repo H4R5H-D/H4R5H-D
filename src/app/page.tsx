@@ -13,6 +13,7 @@ import { ClientMarquee } from "@/components/ClientMarquee";
 import { FaqSection } from "@/components/FaqSection";
 import { HUDOverlay } from "@/components/HUDOverlay";
 import { VyuhLogo } from "@/components/VyuhLogo";
+import { OfferBlock } from "@/components/OfferBlock";
 import { motion } from "framer-motion";
 
 export default function Home() {
@@ -180,6 +181,8 @@ export default function Home() {
               <BentoGrid />
             </div>
           </section>
+
+          <OfferBlock />
 
           <FaqSection />
 

@@ -234,7 +234,7 @@ function SolutionCard({
           </ul>
 
           <motion.a
-            href="#contact"
+            href="/#contact"
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
             transition={{ delay: 0.8 }}

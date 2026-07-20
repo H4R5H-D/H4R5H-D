@@ -35,17 +35,17 @@ export function ContactForm() {
           className="text-center mb-12"
         >
           <p className="font-mono text-[11px] tracking-[0.4em] text-[#FF1E1E]/50 uppercase mb-4">
-            // Initiate Contact
+            {"// Contact"}
           </p>
           <h2
             className="font-mono font-black tracking-tight text-white mb-4"
             style={{ fontSize: "clamp(2rem, 5vw, 3.5rem)" }}
           >
-            Secure Channel
+            Let&apos;s Talk
           </h2>
           <div className="w-32 h-[1px] bg-gradient-to-r from-transparent via-[#FF1E1E]/60 to-transparent mx-auto mb-4" />
           <p className="font-mono text-[12px] text-gray-600 tracking-widest">
-            DIRECT_NODE ·{" "}
+            EMAIL ·{" "}
             <a
               href="mailto:harsh@vyuhmatrix.com"
               className="text-[#FF1E1E]/70 hover:text-[#FF1E1E] transition-colors"
@@ -92,9 +92,9 @@ export function ContactForm() {
                 <div className="w-16 h-16 rounded-full border border-[#FF1E1E]/30 bg-[#FF1E1E]/10 flex items-center justify-center">
                   <Send className="w-6 h-6 text-[#FF1E1E]" />
                 </div>
-                <p className="font-mono text-white text-lg tracking-wide">Transmission received.</p>
+                <p className="font-mono text-white text-lg tracking-wide">Message received.</p>
                 <p className="font-mono text-[11px] text-gray-600 tracking-widest">
-                  RESPONSE_ETA :: &lt;24h
+                  We&apos;ll reply within 24 hours.
                 </p>
               </motion.div>
             ) : (
@@ -125,12 +125,12 @@ export function ContactForm() {
                   {sending ? (
                     <>
                       <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                      Transmitting...
+                      Sending...
                     </>
                   ) : (
                     <>
                       <Send className="w-3.5 h-3.5" />
-                      Send Transmission
+                      Send Message
                     </>
                   )}
                 </button>
@@ -147,7 +147,7 @@ export function ContactForm() {
           transition={{ delay: 0.5 }}
           className="text-center mt-8 font-mono text-[9px] text-gray-700 tracking-[0.3em] uppercase"
         >
-          AES-256 encrypted · Zero retention · Response within 24h
+          Encrypted in transit · No spam, ever · Reply within 24h
         </motion.p>
       </div>
     </section>
